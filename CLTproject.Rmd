@@ -104,7 +104,6 @@ cat("Difference in SD = ", diffSD4, "\n")
 cat("Difference in Mean = ", diffMean4, "\n")
 
 ```
-
 ### In this case the stdev was cut in half because the sample size was four. This is what the central limit theorem says. There are also 5 peaks. They go from FFFF,to FFFM, to FFMM to FMMM and finally MMMM.
 
 ```{r}
@@ -113,7 +112,6 @@ Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
 my1000$k9 = x.avg
-
 
 p <- ggplot(my1000, aes(x=k9),col=sex) + 
   geom_density() +
@@ -127,9 +125,18 @@ p + ggtitle("n = 9") +
 print(paste('mean = ', mean(my1000$k9),' sd = ',sd(my1000$k9)))
 print("Expected SD:")
 sd(my1000$kkardashtemp) / sqrt(numb)
+
+cltSD9 <- sd(my1000$kkardashtemp) / sqrt(numb)
+cltMean9 <-50
+diffSD9 <- abs(sd(my1000$k9)-cltSD2)
+diffMean9 <- abs(mean(my1000$k9)-cltMean2)
+
+cat("Expected SD for n =", numb, ": ", cltSD9, "\n")
+cat("Expected Mean for n =", numb, ": ", cltMean9, "\n\n")
+cat("Difference in SD = ", diffSD9, "\n")
+cat("Difference in Mean = ", diffMean9, "\n")
+
 ```
-
-
 
 ```{r}
 numb = 16
@@ -150,7 +157,19 @@ p + ggtitle("n = 16") +
 
 print(paste('mean = ', mean(my1000$k16),' sd = ',sd(my1000$k16)))
 print("Expected SD:")
-sd(my1000$kkardashtemp) / sqrt(numb)
+
+
+
+cltSD16 <- sd(my1000$kkardashtemp) / sqrt(numb)
+cltMean16 <-50
+diffSD16 <- abs(sd(my1000$k16)-cltSD2)
+diffMean16 <- abs(mean(my1000$k16)-cltMean2)
+
+cat("Expected SD for n =", numb, ": ", cltSD16, "\n")
+cat("Expected Mean for n =", numb, ": ", cltMean16, "\n\n")
+cat("Difference in SD = ", diffSD16, "\n")
+cat("Difference in Mean = ", diffMean16, "\n")
+
 ```
 
 
