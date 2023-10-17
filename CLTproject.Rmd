@@ -192,7 +192,17 @@ p + ggtitle("n = 25") +
 
 print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 print("Expected SD:")
-sd(my1000$kkardashtemp) / sqrt(numb)
+
+cltSD25 <- sd(my1000$kkardashtemp) / sqrt(numb)
+cltMean25 <-50
+diffSD25 <- abs(sd(my1000$k25)-cltSD2)
+diffMean25 <- abs(mean(my1000$k25)-cltMean2)
+
+cat("Expected SD for n =", numb, ": ", cltSD25, "\n")
+cat("Expected Mean for n =", numb, ": ", cltMean25, "\n\n")
+cat("Difference in SD = ", diffSD25, "\n")
+cat("Difference in Mean = ", diffMean25, "\n")
+
 ```
 
 ```{r}
