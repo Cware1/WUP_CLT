@@ -103,13 +103,6 @@ cat("Expected Mean for n =", numb, ": ", cltMean4, "\n\n")
 cat("Difference in SD = ", diffSD4, "\n")
 cat("Difference in Mean = ", diffMean4, "\n")
 
-
-
-
-
-
-
-
 ```
 
 ### In this case the stdev was cut in half because the sample size was four. This is what the central limit theorem says. There are also 5 peaks. They go from FFFF,to FFFM, to FFMM to FMMM and finally MMMM.
